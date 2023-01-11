@@ -52,5 +52,13 @@ public class BookController {
 		}
 	}
 	
+	@GetMapping("/oldest_book")
+	public ResponseEntity<Book> getOldestBook(){
+		return new ResponseEntity<>(bookSer.oldestBook(), HttpStatus.OK);
+	}
 	
+	@GetMapping("/latest_book")
+	public ResponseEntity<Book> getLatestBook(){
+		return new ResponseEntity<>(bookSer.latestBook(), HttpStatus.OK);
+	}
 }

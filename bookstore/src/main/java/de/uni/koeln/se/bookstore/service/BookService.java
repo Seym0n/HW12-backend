@@ -1,5 +1,6 @@
 package de.uni.koeln.se.bookstore.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +25,32 @@ public class BookService {
 	
 	public Book addBook(Book book) {
 		return bookRepo.save(book);
+	}
+	
+	public Book oldestBook() {
+		List<Book> bookList = bookRepo.findAll();
+		Book oldestBook = null;
+		int yearOldestBook = Integer.MAX_VALUE;
+		for(Book singleBook: bookList) {
+			if(singleBook.getDateYear() < yearOldestBook) {
+				oldestBook = singleBook;
+				yearOldestBook = singleBook.getDateYear();
+			}
+		}
+		return oldestBook;
+	}
+	
+	public Book latestBook() {
+		List<Book> bookList = bookRepo.findAll();
+		Book latestBook = null;
+		int yearLatestBook = Integer.MIN_VALUE;
+		for(Book singleBook: bookList) {
+			if(singleBook.getDateYear() > yearLatestBook) {
+				latestBook = singleBook;
+				yearLatestBook = singleBook.getDateYear();
+			}
+		}
+		return latestBook;
 	}
 	
 	public boolean deleteBook(int id) {
