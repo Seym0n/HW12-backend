@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import de.uni.koeln.se.bookstore.repository.BookRepo;
 import de.uni.koeln.se.bookstore.datamodel.Book;
 
-
+@Service
 public class BookService {
 	@Autowired
 	private BookRepo bookRepo;

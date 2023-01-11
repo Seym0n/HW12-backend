@@ -19,15 +19,17 @@ public class Book {
 	private String name;
 	private String author;
 	private Integer dateYear;
+	private Double price;
 	
 	public Book() {
 		
 	}
 	
-	public Book(String name, String author, Integer dateYear) {
+	public Book(String name, String author, Integer dateYear, Double price) {
 		this.name = name;
 		this.author = author;
 		this.dateYear = dateYear;
+		this.price = price;
 	}
 	
 	public Integer getId() {
@@ -40,6 +42,10 @@ public class Book {
 	
 	public String getAuthor() {
 		return author;
+	}
+	
+	public Double getPrice() {
+		return price;
 	}
 	
 	public Integer getDateYear() {
@@ -56,5 +62,9 @@ public class Book {
 	
 	public void setDateYear(Integer dateYear) {
 		this.dateYear = dateYear;
+	}
+	
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 }
