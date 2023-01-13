@@ -64,4 +64,11 @@ public class BookService {
 		}
 		return status;
 	}
+	
+	public void addExampleBooks() {
+		bookRepo.save(new Book("Die Arena", "Stephen King", 2009, 13.49));
+		bookRepo.save(new Book("Die Kunst des guten Lebens", "Rolf Dobelli", 2017, 14.99));
+		bookRepo.save(new Book("Die Kunst des klugen Handels", "Rolf Dobelli", 2014, 11.99));
+		bookRepo.save(new Book("Atomic Habits", "James Clear", 2020, 12.99));
+	}
 }

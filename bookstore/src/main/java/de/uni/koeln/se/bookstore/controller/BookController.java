@@ -63,4 +63,10 @@ public class BookController {
 	public ResponseEntity<Book> getLatestBook(){
 		return new ResponseEntity<>(bookSer.latestBook(), HttpStatus.OK);
 	}
+	
+	@GetMapping("/add_example_books")
+	public ResponseEntity<String> addExampleBooks(){
+		bookSer.addExampleBooks();
+		return new ResponseEntity<>("Added!", HttpStatus.OK);
+	}
 }
